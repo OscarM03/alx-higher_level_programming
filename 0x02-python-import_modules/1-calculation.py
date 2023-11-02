@@ -4,6 +4,7 @@ if __name__ == "__main__":
 
     a = 10
     b = 5
+
     result1 = add(a, b)
     result2 = sub(a, b)
     result3 = mul(a, b)
@@ -13,4 +14,3 @@ if __name__ == "__main__":
     print("{} - {} = {}".format(a, b, result2))
     print("{} * {} = {}".format(a, b, result3))
     print("{} / {} = {}".format(a, b, result4))
-
