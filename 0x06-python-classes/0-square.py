@@ -2,6 +2,8 @@
 """
 No module imported
 """
+
+
 class Square:
     """
     An empty class that defines
