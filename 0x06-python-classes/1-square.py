@@ -6,13 +6,13 @@ No module imported
 
 class Square:
     """
-    A class that defines a square 
+    A class that defines a square
     and a Private instance attribute: size
     """
     def __init__(self, size):
         """
         Attributes:
-            size: Instantiation with 
+            size: Instantiation with
             size (no type/value verification)
             """
         self.__size = size
