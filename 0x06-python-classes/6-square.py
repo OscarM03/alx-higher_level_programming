@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+ No module imported
+"""
+
+
 class Square:
     """
     Defines a square.
