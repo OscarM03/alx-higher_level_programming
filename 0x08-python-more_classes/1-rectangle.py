@@ -3,6 +3,7 @@
 No module imported
 """
 
+
 class Rectangle:
     """
     Defines a rectangle.
@@ -12,7 +13,7 @@ class Rectangle:
     - height (int): Height of the rectangle.
 
     Methods:
-    - __init__(self, width=0, height=0): Initializes a rectangle with the given width and height.
+    - __init__(self, width=0, height=0): Initializes a rectangle.
     - width (property): Getter method for the width attribute.
     - width (setter): Setter method for the width attribute.
     - height (property): Getter method for the height attribute.
@@ -38,7 +39,7 @@ class Rectangle:
         - int: Width of the rectangle.
         """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """
@@ -67,7 +68,7 @@ class Rectangle:
         - int: Height of the rectangle.
         """
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """
