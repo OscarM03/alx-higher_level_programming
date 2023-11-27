@@ -5,7 +5,5 @@ No module imported
 
 
 class Rectangle:
-    """
-    A class that defines an empty retangle
-    """
+    """A class that defines an empty retangle"""
     pass
