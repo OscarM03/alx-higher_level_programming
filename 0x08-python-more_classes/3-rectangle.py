@@ -124,7 +124,7 @@ class Rectangle:
             return ""
         else:
             for i in range(self.__height):
-                rectangle_string += "#" * self.__width 
+                rectangle_string += "#" * self.__width
                 if i < self.__height - 1:
                     rectangle_string += "\n"
             return rectangle_string
