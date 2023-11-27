@@ -121,7 +121,7 @@ class Rectangle:
         """
         rectangle_string = ""
         if self.__width == 0 or self.__height == 0:
-            print()
+            return ""
         else:
             for i in range(self.__height):
                 rectangle_string += "#" * self.__width 
