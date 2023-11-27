@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-No module imported
-"""
+"""Creates a rectangle class"""
 
 
 class Rectangle:
