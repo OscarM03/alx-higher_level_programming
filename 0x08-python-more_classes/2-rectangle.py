@@ -108,24 +108,3 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
-    def __str__(self):
-        rectangle_string = ""
-        if self.__width == 0 or self.__height == 0:
-            print()
-        else:
-            for _ in range(self.__height):
-                rectangle_string += "#" * self.__width + "\n"
-            return rectangle_string
-            
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-print(str(my_rectangle))
-print(repr(my_rectangle))
-
-print("--")
-
-my_rectangle.width = 10
-my_rectangle.height = 3
-print(my_rectangle)
-print(repr(my_rectangle))
