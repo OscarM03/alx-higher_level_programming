@@ -154,7 +154,7 @@ class Rectangle:
 
         This method is automatically called when an instance of the Rectangle
         class is about to be destroyed (deleted). It prints the message
-        "Bye rectangle..." to indicate that the object is being deleted.
+        "Bye rectangle...", to indicate that the object is being deleted.
         """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
