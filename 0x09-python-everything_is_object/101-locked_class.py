@@ -17,4 +17,3 @@ class LockedClass:
         - value (str): The initial value for the 'first_name' attribute.
         """
         self.first_name = value
-
