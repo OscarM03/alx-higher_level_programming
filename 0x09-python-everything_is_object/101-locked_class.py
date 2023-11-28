@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class LockedClass:
     """
     LockedClass: A class with restricted attribute creation.
