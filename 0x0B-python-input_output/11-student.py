@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Defines a Student class"""
-import sys
-import os
 
 
 class Student:
