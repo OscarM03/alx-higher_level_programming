@@ -57,6 +57,64 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.y, 5)
         self.assertEqual(r1.id, 9)
 
+    def test_errors(self):
+        """
+        Test method to verify that the Rectangle class
+        correctly raises specific
+        errors (TypeError or ValueError) with appropriate
+        error messages
+        during instance creation and attribute setting.
+
+        The following scenarios are covered:
+        1. Creating a Rectangle with a non-integer width
+        raises TypeError
+        with the message "width must be an integer".
+        2. Creating a Rectangle with a non-integer height
+        raises TypeError
+        with the message "height must be an integer".
+        3. Creating a Rectangle with a negative width raises
+        ValueError
+        with the message "width must be > 0".
+        4. Creating a Rectangle with a negative height raises
+        ValueError
+        with the message "height must be > 0".
+        5. Creating a Rectangle with a negative x-coordinate
+        raises ValueError
+        with the message "x must be >= 0".
+        6. Creating a Rectangle with a negative y-coordinate
+        raises ValueError
+        with the message "y must be >= 0".
+        """
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle("10", 2)
+        err_msg = "width must be an integer"
+        self.assertEqual(str(e.exception), err_msg)
+
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(10, "2")
+        err_msg = "height must be an integer"
+        self.assertEqual(str(e.exception), err_msg)
+
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(-1, 2)
+        err_msg = "width must be > 0"
+        self.assertEqual(str(e.exception), err_msg)
+
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(1, -2)
+        err_msg = "height must be > 0"
+        self.assertEqual(str(e.exception), err_msg)
+
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(1, 2, -1)
+        err_msg = "x must be >= 0"
+        self.assertEqual(str(e.exception), err_msg)
+
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(1, 2, 3, -4)
+        err_msg = "y must be >= 0"
+        self.assertEqual(str(e.exception), err_msg)
+
 
 if __name__ == "__main__":
     unittest.main()
