@@ -3,7 +3,6 @@
 import json
 
 
-
 class Base:
     """Base class for managing id attribute in future classes."""
 
@@ -14,12 +13,13 @@ class Base:
         Initializes a Base instance.
 
         Parameters:
-        - id (int or None): If provided, assigns the id attribute with the given value.
-                           If None, increments __nb_objects and assigns the new value to id.
+        - id (int or None): If provided, assigns the id attribute
+        with the given value.
+                    If None, increments __nb_objects and
+                    assigns the new value to id.
         """
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
