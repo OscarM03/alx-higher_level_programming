@@ -3,6 +3,7 @@ import unittest
 from models.rectangle import Rectangle
 from models.base import Base
 
+
 class TestRectangle(unittest.TestCase):
     """
     Test suite for the Rectangle class, a subclass of the Base class,
@@ -55,6 +56,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.x, 4)
         self.assertEqual(r1.y, 5)
         self.assertEqual(r1.id, 9)
+
 
 if __name__ == "__main__":
     unittest.main()
