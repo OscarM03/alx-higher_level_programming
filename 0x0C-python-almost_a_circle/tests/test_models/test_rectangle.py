@@ -126,6 +126,24 @@ class TestRectangle(unittest.TestCase):
         char = "##\n##\n##\n"
         self.assertEqual(r1.display(), char)
 
+    def test_str_2args(self):
+        """Test __str__ method with 2 arguments"""
+        r1 = Rectangle(4, 2)
+        output = f'[Rectangle] ({Base._Base__nb_objects}) 0/0 - 4/2'
+        self.assertEqual(str(r1), output)
+
+    def test_str_no_id(self):
+        """Test __str__ method without id parameter"""
+        r1 = Rectangle(5, 6, 1, 2)
+        output = f'[Rectangle] ({Base._Base__nb_objects}) 1/2 - 5/6'
+        self.assertEqual(str(r1), output)
+
+    def test_str_all_args(self):
+        """Test __str__ with all arguments"""
+        r1 = Rectangle(3, 5, 2, 1, 15)
+        output = f'[Rectangle] (15) 2/1 - 3/5'
+        self.assertEqual(str(r1), output)
+
 
 if __name__ == "__main__":
     unittest.main()
