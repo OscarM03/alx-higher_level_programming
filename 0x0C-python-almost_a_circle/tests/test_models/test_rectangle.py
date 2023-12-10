@@ -120,6 +120,12 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(10, 5)
         self.assertEqual(r1.area(), 50)
 
+    def test_char_area(self):
+        """Test method for Rectangle instance with the character #"""
+        r1 = Rectangle(2, 3)
+        char = "##\n##\n##\n"
+        self.assertEqual(r1.display(), char)
+
 
 if __name__ == "__main__":
     unittest.main()
