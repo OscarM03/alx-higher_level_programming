@@ -123,3 +123,10 @@ class Rectangle(Base):
             result += char_rect + "\n"
             print(char_rect)
         return result
+
+    def __str__(self):
+        """Rectangle __str__ method(overriding)"""
+        return "[{}] ({}) {}/{} - {}/{}".format(
+            (type(self).__name__), self.id, self.x, self.y,
+            self.width, self.height
+        )
