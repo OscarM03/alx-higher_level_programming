@@ -109,7 +109,7 @@ class Rectangle(Base):
         """A public method that returns the area
         value of the Rectangle"""
         return self.__width * self.__height
-    
+
     def display(self):
         """
         A public method that
@@ -117,11 +117,9 @@ class Rectangle(Base):
         with the character # and returns the string
         generated
         """
-        result = ""  
+        result = ""
         for i in range(self.__height):
             char_rect = "#" * self.__width
-            result += char_rect + "\n" 
+            result += char_rect + "\n"
             print(char_rect)
         return result
-
-
