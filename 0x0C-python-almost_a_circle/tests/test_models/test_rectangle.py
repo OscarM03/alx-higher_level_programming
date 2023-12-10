@@ -115,6 +115,11 @@ class TestRectangle(unittest.TestCase):
         err_msg = "y must be >= 0"
         self.assertEqual(str(e.exception), err_msg)
 
+    def test_area(self):
+        """Test method to confirm the area of the Rectangle"""
+        r1 = Rectangle(10, 5)
+        self.assertEqual(r1.area(), 50)
+
 
 if __name__ == "__main__":
     unittest.main()
