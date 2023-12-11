@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Modules imported"""
 import json
+import csv
 
 
 class Base:
@@ -93,3 +94,41 @@ class Base:
         data_list = cls.from_json_string(read_data)
         instances_list = [cls.create(**data) for data in data_list]
         return instances_list
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves to csv"""
+        if list_objs is not None:
+            filename = "{}.csv".format(cls.__name__)
+            with open(filename, 'w', newline='', encoding='utf-8') as file:
+                writer = csv.writer(file)
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        writer.writerow([obj.id, obj.width, obj.height,
+                                         obj.x, obj.y])
+                    elif cls.__name__ == "Square":
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads from csv"""
+        created_instances = []
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, 'r', newline='', encoding='utf-8') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                row = [int(r) for r in row]
+                if cls.__name__ == "Rectangle":
+                    d = {"id": row[0], "width": row[1], "height": row[2],
+                         "x": row[3], "y": row[4]}
+                elif cls.__name__ == "Square":
+                    d = {"id": row[0], "size": row[1], "x": row[2],
+                         "y": row[3]}
+                created_instances.append(cls.create(**d))
+        return created_instances
