@@ -43,7 +43,7 @@ class Base:
         """
         empty_list = []
         new_list_obj = []
-        if list_objs is None:
+        if list_objs is None or not list_objs:
             return empty_list
         for obj in list_objs:
             new_list_obj.append(obj.to_dictionary())
