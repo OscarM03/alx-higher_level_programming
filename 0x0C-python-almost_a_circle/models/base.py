@@ -60,3 +60,19 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Class method that returns an instance with all
+        attributes already set
+        """
+        from models.square import Square
+        from models.rectangle import Rectangle
+        if cls is Square:
+            d_cls = Square(4)
+        elif cls is Rectangle:
+            d_cls = Rectangle(3, 4)
+
+        d_cls.update(**dictionary)
+        return d_cls
