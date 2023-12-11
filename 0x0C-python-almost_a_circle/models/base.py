@@ -41,13 +41,11 @@ class Base:
         class method that writes the JSON string representation
         of list_objs to a file
         """
-        empty_list = []
-        new_list_obj = []
         if list_objs is not None:
             for obj in list_objs:
-                new_list_obj.append(obj.to_dictionary())
+                list_objs.append(obj.to_dictionary())
 
-            j_data = cls.to_json_string(new_list_obj)
+            j_data = cls.to_json_string(list_objs)
             with open("{}.json".format(cls.__name__), "w",
                     encoding="utf-8") as file:
                 file.write(j_data)
