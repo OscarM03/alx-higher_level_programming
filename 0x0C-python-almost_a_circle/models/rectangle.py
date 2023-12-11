@@ -150,3 +150,8 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(
             (type(self).__name__), self.id, self.width, self.height,
             self.x, self.y)
+
+    def to_dictionary(self):
+        """Returns a dictonary representation of Rectangle"""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
