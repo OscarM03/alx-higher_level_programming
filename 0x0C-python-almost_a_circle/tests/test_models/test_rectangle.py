@@ -144,6 +144,25 @@ class TestRectangle(unittest.TestCase):
         output = f'[Rectangle] (15) 2/1 - 3/5'
         self.assertEqual(str(r1), output)
 
+    def test_dict_2args(self):
+        """
+        Test the dictionary representation of a Rectangle
+            with only 2 arguments
+        """
+        r1 = Rectangle(2, 3)
+        dict = {'x': 0, 'y': 0, 'id': Base._Base__nb_objects,
+                'height': 3, 'width': 2}
+        self.assertEqual(r1.to_dictionary(), dict)
+
+    def test_dict_all_args(self):
+        """
+        Test the dictionary representation of a Rectangle
+            with all arguments
+        """
+        r1 = Rectangle(2, 3, 4, 5, 6)
+        dict = {'x': 4, 'y': 5, 'id': 6, 'height': 3, 'width': 2}
+        self.assertEqual(r1.to_dictionary(), dict)
+
 
 if __name__ == "__main__":
     unittest.main()
