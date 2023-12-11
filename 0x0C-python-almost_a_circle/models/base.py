@@ -49,3 +49,14 @@ class Base:
             j_data = cls.to_json_string(new_list_obj)
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(j_data)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        static method that returns the list of
+        the JSON string representation json_string
+        """
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
