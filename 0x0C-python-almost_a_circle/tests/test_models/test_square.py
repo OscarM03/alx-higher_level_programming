@@ -109,3 +109,21 @@ class SquareTest(unittest.TestCase):
             s1 = Square(1, 2, -3)
         err_msg = "y must be >= 0"
         self.assertEqual(str(e.exception), err_msg)
+
+    def test_dict_2args(self):
+        """
+        Test the dictionary representation of a Square
+            with only 2 arguments
+        """
+        s1 = Square(2, 3)
+        dict = {'id': Base._Base__nb_objects, 'x': 3, 'size': 2, 'y': 0}
+        self.assertEqual(s1.to_dictionary(), dict)
+
+    def test_dict_all_args(self):
+        """
+        Test the dictionary representation of a Square
+            with all arguments
+        """
+        s1 = Square(2, 3, 4, 5)
+        dict = {'id': 5, 'x': 3, 'size': 2, 'y': 4}
+        self.assertEqual(s1.to_dictionary(), dict)
