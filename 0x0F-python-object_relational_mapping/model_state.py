@@ -13,6 +13,7 @@ Base = declarative_base()
 
 
 class State(Base):
+    """State class that inherit from Base and defines id and name"""
     __tablename__ = 'states'
     id = Column(Integer, nullable=False, primary_key=True,
                 autoincrement=True, unique=True)
