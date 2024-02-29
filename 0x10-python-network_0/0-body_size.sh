@@ -1,3 +1,3 @@
 #!/bin/bash
-# sends a request to that URL, and displays the size of the body of the response
+# Sends request to URL, and displays byte size of HTTP response
 curl -s "${1}" | wc -c
