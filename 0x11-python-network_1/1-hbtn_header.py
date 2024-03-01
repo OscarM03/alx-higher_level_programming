@@ -3,7 +3,9 @@
 import urllib.request
 import sys
 
-with urllib.request.urlopen(sys.argv[1]) as response:
+request = urllib.request.Request(sys.argv[1])
+
+with urllib.request.urlopen(request) as response:
     headers = response.headers
 
     value = headers.get('X-Request-Id')
