@@ -6,7 +6,6 @@ import sys
 with urllib.request.urlopen(sys.argv[1]) as response:
     headers = response.headers
 
-    for key, value in headers.items():
-        if key == 'X-Request-Id':
-            print(value)
-        break
+    value = headers.get('X-Request-Id')
+    if value is not None:
+        print(value)
